@@ -1,0 +1,9 @@
+{
+  "event_id": "092108-018-sample-001",
+  "event_type": "STORE_APPLIED",
+  "aggregate_type": "brand_operator",
+  "aggregate_id": "regional_food_brand_governance-001",
+  "occurred_at": "2026-09-20T18:00:00+08:00",
+  "version": 1,
+  "summary": "登记地方小吃公用品牌治理的首条领域记录"
+}
