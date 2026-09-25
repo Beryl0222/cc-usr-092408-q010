@@ -1,9 +1,30 @@
 {
   "event_id": "092108-018-sample-001",
-  "event_type": "STORE_APPLIED",
-  "aggregate_type": "brand_operator",
-  "aggregate_id": "regional_food_brand_governance-001",
-  "occurred_at": "2026-09-20T18:00:00+08:00",
-  "version": 1,
-  "summary": "登记地方小吃公用品牌治理的首条领域记录"
+  "event_type": "INSPECTION_RECORDED",
+  "aggregate_type": "case",
+  "aggregate_id": "case-2026-0921-001",
+  "occurred_at": "2026-09-21T10:00:00+08:00",
+  "version": 3,
+  "actor": "insp-wang",
+  "content_fingerprint": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "summary": "城西路店 stall-A 巡检记录，绑定 std-v1 标准快照与证据，建议风险 high 待检查员确认",
+  "payload": {
+    "storeId": "st-chengxi-01",
+    "stallId": "stall-A",
+    "responsibleSubjectId": "subj-li",
+    "historicalSubjectIds": ["subj-wang", "subj-li"],
+    "inspectedAt": "2026-09-21T10:00:00+08:00",
+    "standardSnapshot": {
+      "standardVersionId": "std-v1",
+      "versionNo": "v1",
+      "contentFingerprint": "sha256:1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "findings": [
+      { "item": "生熟分开", "severity": "critical", "evidenceIds": ["ev-001"] }
+    ],
+    "evidence": [
+      { "evidenceId": "ev-001", "type": "photo", "contentFingerprint": "sha256:2222222222222222222222222222222222222222222222222222222222222222" }
+    ],
+    "suggestedRisk": { "suggestedLevel": "high", "advisory": true }
+  }
 }

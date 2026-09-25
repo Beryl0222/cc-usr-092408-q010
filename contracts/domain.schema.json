@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "地方小吃公用品牌治理领域事件",
+  "description": "穿透许可、巡检处置、申诉复核、离线归并与到期补齐所用的不可变事件契约。事件一经接收不改写，更正产生后继记录。",
   "type": "object",
   "required": [
     "event_id",
@@ -8,8 +9,7 @@
     "aggregate_type",
     "aggregate_id",
     "occurred_at",
-    "version",
-    "summary"
+    "version"
   ],
   "properties": {
     "event_id": {
@@ -23,7 +23,39 @@
         "STANDARD_ACCEPTED",
         "INSPECTION_RECORDED",
         "AUTHORIZATION_PAUSED",
-        "REMEDIATION_CLOSED"
+        "REMEDIATION_CLOSED",
+        "BRAND_REGISTERED",
+        "SUBJECT_REGISTERED",
+        "STORE_REGISTERED",
+        "CATEGORY_REGISTERED",
+        "STAFF_REGISTERED",
+        "STANDARD_VERSION_PUBLISHED",
+        "STANDARD_VERSION_SUPERSEDED",
+        "STALL_OPERATOR_CHANGED",
+        "LICENSE_GRANTED",
+        "SUBLICENSE_REQUESTED",
+        "SUBLICENSE_APPROVED",
+        "SUBLICENSE_REJECTED",
+        "LICENSE_SUSPENDED",
+        "LICENSE_RESUMED",
+        "LICENSE_REVOKED",
+        "COMPLAINT_FILED",
+        "RISK_CONFIRMED",
+        "DISPOSITION_DECIDED",
+        "APPEAL_FILED",
+        "APPEAL_RESOLVED",
+        "REMEDIATION_SUBMITTED",
+        "REVIEW_DECIDED",
+        "ESCALATION_RECORDED",
+        "PENALTY_HELD_BY_APPEAL",
+        "PENALTY_HOLD_RELEASED",
+        "UPLOAD_RECEIVED",
+        "RECEIPT_DELIVERED",
+        "RECEIPT_CONTENT_DIVERGED",
+        "DUE_TASK_SCHEDULED",
+        "DUE_TASK_FIRED",
+        "OUTAGE_STARTED",
+        "OUTAGE_ENDED"
       ]
     },
     "aggregate_type": {
@@ -32,7 +64,19 @@
         "brand_operator",
         "authorized_store",
         "standard_version",
-        "compliance_case"
+        "compliance_case",
+        "brand",
+        "subject",
+        "store",
+        "category",
+        "staff",
+        "license",
+        "sublicense_request",
+        "case",
+        "appeal",
+        "upload_receipt",
+        "due_task",
+        "sync_state"
       ]
     },
     "aggregate_id": {
@@ -45,7 +89,20 @@
     },
     "version": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "description": "该聚合内的单调版本号，并发提交用期望版本做乐观锁。"
+    },
+    "actor": {
+      "type": ["string", "null"],
+      "description": "触发事件的人员 staffId 或经营主体 subjectId。"
+    },
+    "content_fingerprint": {
+      "type": "string",
+      "pattern": "^sha256:",
+      "description": "事件负载的内容指纹，用于离线上传与重复回执归并。"
+    },
+    "payload": {
+      "type": "object"
     },
     "summary": {
       "type": "string",
