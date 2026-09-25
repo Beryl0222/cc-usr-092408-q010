@@ -1,11 +1,11 @@
 {
   "name": "regional-food-brand-governance",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "领域事件基础校验",
+  "description": "地方小吃公用品牌穿透治理：授权链、巡检处置、申诉整改、离线归并与监管视图",
   "scripts": {
     "test": "node --test",
-    "build": "node --check src/validator.js"
+    "build": "for f in src/*.js src/domain/*.js src/services/*.js; do node --check \"$f\" || exit 1; done"
   }
 }

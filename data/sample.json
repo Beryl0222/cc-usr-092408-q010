@@ -1,9 +1,13 @@
 {
-  "event_id": "092108-018-sample-001",
-  "event_type": "STORE_APPLIED",
-  "aggregate_type": "brand_operator",
-  "aggregate_id": "regional_food_brand_governance-001",
-  "occurred_at": "2026-09-20T18:00:00+08:00",
+  "event_id": "20260925-001-sample-001",
+  "event_type": "BRAND_REGISTERED",
+  "aggregate_type": "brand",
+  "aggregate_id": "brand_minchi",
+  "occurred_at": "2026-09-25T08:00:00+08:00",
   "version": 1,
-  "summary": "登记地方小吃公用品牌治理的首条领域记录"
+  "summary": "公用品牌建档：闽地小吃（示例事件）",
+  "payload": {
+    "name": "闽地小吃",
+    "officeName": "闽地小吃公用品牌办公室"
+  }
 }

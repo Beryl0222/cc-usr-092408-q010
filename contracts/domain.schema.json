@@ -19,20 +19,55 @@
     "event_type": {
       "type": "string",
       "enum": [
-        "STORE_APPLIED",
-        "STANDARD_ACCEPTED",
-        "INSPECTION_RECORDED",
-        "AUTHORIZATION_PAUSED",
-        "REMEDIATION_CLOSED"
+        "BRAND_REGISTERED",
+        "OPERATOR_REGISTERED",
+        "STORE_REGISTERED",
+        "CATEGORY_REGISTERED",
+        "STANDARD_PUBLISHED",
+        "STANDARD_DEPRECATED",
+        "LICENSE_GRANTED",
+        "LICENSE_APPROVAL_DECIDED",
+        "LICENSE_CLOSED_BY_CHANGE",
+        "LICENSE_SCOPE_SUSPENDED",
+        "LICENSE_SCOPE_RESUMED",
+        "LICENSE_REVOKED",
+        "UNAUTHORIZED_OPERATION_DETECTED",
+        "CASE_OPENED",
+        "ISSUE_RECORDED",
+        "RISK_SUGGESTED",
+        "RISK_CONFIRMED",
+        "ENFORCEMENT_DECIDED",
+        "APPEAL_FILED",
+        "APPEAL_DECIDED",
+        "REMEDIATION_SUBMITTED",
+        "REMEDIATION_REVIEWED",
+        "REMEDIATION_REVIEW_CONFLICTED",
+        "REINSPECTION_RECORDED",
+        "REINSTATEMENT_DECIDED",
+        "ESCALATION_RAISED",
+        "CASE_CLOSED",
+        "RECEIPT_REGISTERED",
+        "RECEIPT_MERGED",
+        "RECEIPT_CONTENT_INVESTIGATION_OPENED",
+        "RECEIPT_INVESTIGATION_RESOLVED",
+        "NOTIFICATION_SCHEDULED",
+        "NOTIFICATION_HELD",
+        "NOTIFICATION_RESCHEDULED",
+        "NOTIFICATION_CANCELLED",
+        "NOTIFICATION_DISPATCHED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
-        "brand_operator",
-        "authorized_store",
+        "brand",
+        "operator",
+        "store",
+        "category",
         "standard_version",
-        "compliance_case"
+        "license",
+        "compliance_case",
+        "offline_receipt"
       ]
     },
     "aggregate_id": {
@@ -50,6 +85,9 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object"
     }
   },
   "additionalProperties": true
